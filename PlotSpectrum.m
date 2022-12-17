@@ -10,7 +10,7 @@ title(sprintf("Magnitude of $%s$ (Channel 1)",string),'Interpreter',"latex")
 if isContinuous
     xlabel("frequency/Hz")
 else
-    xlabel("$\omega$", "Interpreter","latex")
+    xlabel("$\omega/\pi$", "Interpreter","latex")
 end
 subplot(2,2,2)
 plot(x,abs(y(:,2)),'r-')
@@ -18,7 +18,7 @@ title(sprintf("Magnitude of $%s$ (Channel 2)",string),'Interpreter',"latex")
 if isContinuous
     xlabel("frequency/Hz")
 else
-    xlabel("$\omega$", "Interpreter","latex")
+    xlabel("$\omega/\pi$", "Interpreter","latex")
 end
 
 subplot(2,2,3)

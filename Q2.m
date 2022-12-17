@@ -14,7 +14,7 @@ PlotWave(time_base_d,x_d,"x_d[n]",6)
 X_d = fft(x_d, N_d_fft);
 X_d = fftshift(X_d);
 
-freq_base_discrete_d = linspace(-1,1,N_d_fft)*pi;
+freq_base_discrete_d = linspace(-1,1,N_d_fft);
 PlotSpectrum(freq_base_discrete_d, X_d, "X_d(e^{j\omega})", 7, false);
 
 % upsampling
@@ -30,7 +30,7 @@ PlotWave(time_base_e,x_e,"x_e[n]",8)
 X_e = fft(x_e, N_e_fft);
 X_e = fftshift(X_e);
 
-freq_base_discrete_e = linspace(-1,1,N_e_fft)*pi;
+freq_base_discrete_e = linspace(-1,1,N_e_fft);
 PlotSpectrum(freq_base_discrete_e, X_e, "X_e(e^{j\omega})", 9, false);
 
 % Change sampling rate.
@@ -43,5 +43,5 @@ N_compress = length(x_compress);
 N_compress_fft = pow2(ceil(log2(N_compress)));
 X_compress = fft(x_compress, N_compress_fft);
 X_compress = fftshift(X_compress);
-freq_base_discrete_compress = linspace(-1,1,N_compress_fft)*pi;
+freq_base_discrete_compress = linspace(-1,1,N_compress_fft);
 PlotSpectrum(freq_base_discrete_compress, X_compress, "X_{compress}(e^{j\omega})", 10, false);

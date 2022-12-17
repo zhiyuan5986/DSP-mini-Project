@@ -10,6 +10,7 @@ N_fft = pow2(ceil(log2(N)));
 Fs_fft = Fs * N / N_fft;
 noise = 0.01*randn(N,2);
 x_N = x_N + noise;
+audiowrite("spring_with_noise.wav", x_N, Fs);
 
 dt = (T * N) / N_fft;
 df = 1 / (T * N);
@@ -30,7 +31,7 @@ freq_base_continuous = linspace(-1/2,1/2,N_fft)*Fs_fft;
 PlotSpectrum(freq_base_continuous, X, "X(j\omega)", 2, true);
 PlotSpectrumLocal(5000,Fs_fft,N_fft,X,"X(j\omega)",3);
 
-freq_base_discrete = linspace(-1,1,N_fft)*pi;
+freq_base_discrete = linspace(-1,1,N_fft);
 PlotSpectrum(freq_base_discrete, X, "X(e^{j\omega})", 4, false);
 
 f = (0:(N_fft-1)) * df;
