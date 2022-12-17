@@ -1,5 +1,5 @@
 % Question1
-[x_N, Fs] = audioread('./rose.wav');
+[x_N, Fs] = audioread('./spring.wav');
 
 % Figure out sample period T
 T=1/Fs;
@@ -8,6 +8,8 @@ w_s=2*pi*Fs;
 N = length(x_N);
 N_fft = pow2(ceil(log2(N)));
 Fs_fft = Fs * N / N_fft;
+noise = 0.01*randn(N,2);
+x_N = x_N + noise;
 
 dt = (T * N) / N_fft;
 df = 1 / (T * N);
